@@ -1,0 +1,17 @@
+import keyboard
+list1=[['*','*','*'],
+         ['*', '*', '*'],
+         ['*','*','*']]
+
+#print (list1)
+for i in list1:
+    for k in i:
+      print(k, end = ' ')
+    print()
+stroka=int(input('vvedite stroku:'))
+stolbets=int(input('vvedite stolbets'))
+
+if list1[stroka][stolbets] == '*':
+    print('x')
+if 
+
