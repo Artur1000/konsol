@@ -1,0 +1,14 @@
+balance=10000
+print("привет!\nты приехал из другого города в поисках лучшей жизни!\nваш баланс 10000")
+while(1==1):
+    print("пойти в магазин или на работу?")
+    vybor = input()
+    if vybor == "на работу":
+        balance= balance+1000
+    if vybor == "баланс":
+        print(balance)
+       vybor = input() 
+    if vybor == 'в магазин':
+        print("хлеб-15\nогурец 100")
+        if vybor == огурец:
+            balance=balance-100
