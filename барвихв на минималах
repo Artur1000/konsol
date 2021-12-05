@@ -1,14 +1,43 @@
+import time 
 balance=10000
-print("привет!\nты приехал из другого города в поисках лучшей жизни!\nваш баланс 10000")
+print("привет!\nты приехал из другого города в поисках лучшей жизни!\nваш баланс 10000\n")
+im=input("введите имя")
+yr= 1
+a=time.time()
+b=0
+rab = "безработный"
 while(1==1):
-    print("пойти в магазин или на работу?")
+    print("список команд:\nменю\nбаланс\nпрофиль")
     vybor = input()
-    if vybor == "на работу":
-        balance= balance+1000
+    if vybor == "профиль":
+        print(im)
+        print(balance)
+        print(rab)
+        print("уровень:",yr)
     if vybor == "баланс":
         print(balance)
-       vybor = input() 
-    if vybor == 'в магазин':
-        print("хлеб-15\nогурец 100")
-        if vybor == огурец:
-            balance=balance-100
+    if vybor == "меню":
+        print("пойти в магазин или на работу?")
+        if vybor == "профиль":
+            print(im)
+            print(balance)
+        vybor = input()
+        if vybor == "на работу":
+            if (time.time()-b)>20:
+                rab=input("куда пойдем?\nшахта\nферма")
+                balance= balance+1000
+                b=time.time()
+            else:
+                print("ты устал с работы прошло", time.time()-b)
+        if vybor == "баланс":
+            print(balance)
+
+            vybor = input() 
+        if vybor == 'в магазин':
+            print("хлеб-15\nогурец 100\nсим карта1000")
+            vybor = input() 
+            if vybor == "огурец":
+                balance=balance-100
+            if vybor == "сим карта":
+                balance=balance-1000
+
