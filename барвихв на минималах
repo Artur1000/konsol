@@ -17,18 +17,31 @@ while(1==1):
     if vybor == "баланс":
         print(balance)
     if vybor == "меню":
-        print("пойти в магазин или на работу?")
-        if vybor == "профиль":
-            print(im)
-            print(balance)
+        print("пойти в магазин,на работу, на подрработку?")
         vybor = input()
-        if vybor == "на работу":
+        if vybor== "на работу":
+            print("дпс\nнужен 10 ур!")
+            if vybor== "дпс":
+                if yr>10:
+                    balance=balance+3000
+            if yr<10:
+                print("нужен 10 ур! у вас пока что",yr)
+        if vybor == "на подработку":
             if (time.time()-b)>20:
+                
                 rab=input("куда пойдем?\nшахта\nферма")
+                yr=yr+2
                 balance= balance+1000
                 b=time.time()
             else:
                 print("ты устал с работы прошло", time.time()-b)
+                    
+        if vybor == "профиль":
+            print(im)
+            print(balance)
+        vybor = input()
+        
+       
         if vybor == "баланс":
             print(balance)
 
