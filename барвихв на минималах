@@ -1,12 +1,13 @@
 import time 
 balance=10000
-print("привет!\nты приехал из другого города в поисках лучшей жизни!\nваш баланс 10000")
 print("привет!\nты приехал из другого города в поисках лучшей жизни!\nваш баланс 10000\n")
 im=input("введите имя")
 yr= 1
 a=time.time()
 b=0
 rab = "безработный"
+ts = " машина отсутствует!"
+syt = 100
 while(1==1):
     print("пойти в магазин или на работу?")
     print("список команд:\nменю\nбаланс\nпрофиль")
@@ -18,35 +19,65 @@ while(1==1):
         print(balance)
         print(rab)
         print("уровень:",yr)
+        print("сытость"syt)
+
     if vybor == "баланс":
         print(balance)
-       vybor = input() 
-    if vybor == 'в магазин':
-        print("хлеб-15\nогурец 100")
-        if vybor == огурец:
-            balance=balance-100
     if vybor == "меню":
-        print("пойти в магазин или на работу?")
         if vybor == "профиль":
-            print(im)
-            print(balance)
+             print(im)
+             print(balance)
+             print(rab)
+             print("уровень:",yr)
+             print(ts)
+             print("сытость"syt)
+           
+        print("пойти в магазин,в автосалон,на работу, на подрработку?")
         vybor = input()
         if vybor == "на работу":
-            if (time.time()-b)>20:
+            print("дпс\nнужен 10 ур!")
+            if vybor== "дпс":
+                if yr>10:
+                    balance=balance+3000
+                    syt=syt-20
+            if yr<10:
+                print("нужен 10 ур! у вас пока что",yr)
+        if vybor == "на подработку":
+            if (time.time()-b)>30:
                 rab=input("куда пойдем?\nшахта\nферма")
+                yr=yr+2
                 balance= balance+1000
+                syt=syt-10
                 b=time.time()
             else:
                 print("ты устал с работы прошло", time.time()-b)
+        if vybor == "в автосалон":
+            print("ваз 2106")
+            if vybor == "ваз 2106":
+                balance=balance-10000
+                ts=ts+"ваз 2106"
+        if vybor == "в магазин":
+                print("огурец 100руб или банан100руб")
+                if vybor == "огурец":
+                    balance=balance-100
+                    syt=syt+10
+                if vybor == "банан":
+                    balance=balance-100
+                    syt=syt+10
+                    
+            
+
+        if vybor == "профиль":
+            print(im)
+            print(balance)
+            print(rab)
+            print("уровень:",yr)
+            print(ts)
+            print("сытость"syt)
+        vybor = input()
+
+
         if vybor == "баланс":
             print(balance)
 
-            vybor = input() 
-        if vybor == 'в магазин':
-            print("хлеб-15\nогурец 100\nсим карта1000")
-            vybor = input() 
-            if vybor == "огурец":
-                balance=balance-100
-            if vybor == "сим карта":
-                balance=balance-1000
 
