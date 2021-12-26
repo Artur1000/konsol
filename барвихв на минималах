@@ -19,7 +19,7 @@ while(1==1):
         print(balance)
         print(rab)
         print("уровень:",yr)
-        print("сытость"syt)
+        print("сытость",syt)
 
     if vybor == "баланс":
         print(balance)
@@ -30,7 +30,7 @@ while(1==1):
              print(rab)
              print("уровень:",yr)
              print(ts)
-             print("сытость"syt)
+             print("сытость",syt)
            
         print("пойти в магазин,в автосалон,на работу, на подрработку?")
         vybor = input()
@@ -59,11 +59,11 @@ while(1==1):
         if vybor == "в магазин":
                 print("огурец 100руб или банан100руб")
                 if vybor == "огурец":
-                    balance=balance-100
-                    syt=syt+10
+                    balance=-100
+                    syt=+10
                 if vybor == "банан":
-                    balance=balance-100
-                    syt=syt+10
+                    balance=-100
+                    syt=+10
                     
             
 
@@ -73,7 +73,7 @@ while(1==1):
             print(rab)
             print("уровень:",yr)
             print(ts)
-            print("сытость"syt)
+            print("сытость",syt)
         vybor = input()
 
 
