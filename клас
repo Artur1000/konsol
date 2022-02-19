@@ -1,0 +1,49 @@
+class Student:
+    def __init__ (self,n,a,t,u):
+        self.fam = n
+        self.ini = a
+        self.grup = t
+        self.usp = u
+        
+    def privetstvije(self):
+        print(self.fam,self.ini, self.grup, self.usp)
+        
+def imi (Student):
+     return Student.fam
+    
+
+human = Student("Гога","Романов Владимирович","6",4.2)
+human1 = Student("гово","Романов Владимирович","6",5.0)
+human2 = Student("яго","Романов Владимирович","6",2.2)
+human3 = Student("гон","Романов Владимирович","6",3.4)
+human4 = Student("Егор","Романов Владимирович","6",3.5)
+human5 = Student("гриша","Романов Владимирович","6",4.55)
+human6 = Student("кал","Романов Владимирович","6",3.1)
+human7 = Student("руслан","Романов Владимирович","6",2.3)
+human8 = Student("Гоша","Романов Владимирович","6",4.0)
+human9 = Student("Гоша","Романов Владимирович","6",2.0)
+group = []
+group.append(human)
+group.append(human1)
+group.append(human2)
+group.append(human3)
+group.append(human4)
+group.append(human5)
+group.append(human6)
+group.append(human7)
+group.append(human8)
+group.append(human9)
+
+a=imi(human8)
+Student.privetstvije(group[0])
+Student.privetstvije(group[1])
+Student.privetstvije(group[2])
+Student.privetstvije(group[3])
+Student.privetstvije(group[4])
+print()
+group2=sorted(group,key=imi)
+Student.privetstvije(group2[0])
+Student.privetstvije(group2[1])
+Student.privetstvije(group2[2])
+Student.privetstvije(group2[3])
+Student.privetstvije(group2[4])
