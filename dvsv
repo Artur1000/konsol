@@ -1,0 +1,21 @@
+imi = input("как назовем?")
+voz = input("сколько ему лет?")
+spos = input("какая супер способность?")
+while True:
+    pers = {"имя": imi, "возраст":voz,"суперспособность":spos}
+    for key in pers:
+        print(key,": ", pers[key])
+    comand = input("что заменить?")
+    if comand == 'имя':
+        newName = input("введи новое имя")
+        pers[comand] = newName
+    elif comand == 'возраст':
+        newV = input("введи новй возраст")
+        pers[comand] = newV     
+    elif comand == 'суперспособность':
+        newS = input("введи новую суперспособность")
+        pers[comand] = newS
+    else:
+        print("такой команды нет")
+    for key in pers:
+        print(key,":  ", pers[key])   
