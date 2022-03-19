@@ -1,15 +1,31 @@
-from tkinter import *  
-  
+from tkinter import *
+
 def clicked():
+
     if txt.get()=='123'and txt1.get()=='111':
-        res = "Привет ты вошел"
-        lbl.configure(text=res)
+        window = Tk()  
+        window.title("заметки")  
+        window.geometry('400x250')  
+        menu = Menu(window)  
+        new_item = Menu(menu)
+        txt2 = Entry(window,width=100)  
+        txt2.grid(column=1, row=0)
+        new_item.add_command(label='сохранить',command=file)  
+        menu.add_cascade(label='Файл', menu=new_item)  
+        window.config(menu=menu)  
+        window.mainloop()
     else:
         res = "пока {}".format(txt.get())
-        lbl.configure(text=res)  
+        lbl.configure(text=res)
+def file():
+    f = open("file.txt",'w')
+    f.write(txt2.get())
+    f.close()
+
+    
   
 window = Tk()  
-window.title("Добро пожаловать в приложение PythonRu")  
+window.title("вход")  
 window.geometry('400x250')  
 lbl = Label(window, text="логин")  
 lbl.grid(column=0, row=0)
