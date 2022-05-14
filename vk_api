@@ -1,0 +1,45 @@
+import vk_api
+from vk_api.longpoll import VkLongPoll, VkEventType
+from vk_api.keyboard import VkKeyboard, VkKeyboardColor
+
+session = vk_api.VkApi(token="f389aa446925df7b12868fd31fe3516d1ad49924f35b4bab09f75d354dbe9d19d09b18cd355fa6cf7d2d7")
+api = session.get_api()
+balanse = []
+
+def send_message(user_id,group_id, message, **kwargs):
+    api.messages.send(
+        user_id=user_id,
+        group_id=group_id,
+        message=message,
+        random_id=0,
+        **kwargs
+    )
+    
+
+for event in VkLongPoll(session).listen():
+    if event.type == VkEventType.MESSAGE_NEW and event.to_me:
+        text = event.text.lower()
+        user_id = event.user_id
+
+        if text == "start":
+            keyboard = VkKeyboard()
+            keyboard.add_location_button()
+            keyboard.add_line()
+            
+            buttons = ["blue", "red", "white", "green"]
+            button_colors = [VkKeyboardColor.PRIMARY, VkKeyboardColor.NEGATIVE,
+                                VkKeyboardColor.SECONDARY, VkKeyboardColor.POSITIVE]
+
+            for btn, btn_color in zip(buttons, button_colors):
+                keyboard.add_button(btn, btn_color)
+
+            send_message(user_id, "My Keyboard", keyboard=keyboard.get_keyboard())
+
+        elif text == "blue":
+            send_message(user_id, "BLUE")
+        if text == "red":
+            balanse.append({'user':user_id, 'ball':1000})
+            for t in range (len(balanse)):
+                if balanse[t]['user']==user_id:
+                    send_message(user_id, balanse[t]['ball'])
+            
